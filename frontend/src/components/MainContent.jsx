@@ -8,7 +8,7 @@ export default function MainContent() {
     return (
       <main>
         <h1 className="hello">Bonjour <span>Thomas</span></h1>
-        <p class="congrats">Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
+        <p className="congrats">Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
        
         <section className="stats">
           <ActiviteQuotidienne />
