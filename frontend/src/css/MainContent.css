@@ -1,0 +1,19 @@
+main{
+    padding: 20px 60px 0 200px;
+}
+h1.hello{
+    font-size: 48px;
+}
+h1.hello span{
+    color: red;
+}
+.congrats{
+    margin-top:2rem;
+    font-size: 18px;
+}
+.stats {
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 300px;
+    grid-template-rows: 1fr 1fr;
+}

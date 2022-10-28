@@ -1,0 +1,26 @@
+.calories{
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+}
+.calories section{
+    background: #FBFBFB;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 20px;
+    margin-bottom: 2rem;
+}
+.calories section img{
+    width: 80px;
+}
+.calories section p span{
+    display: block;
+    font-weight: 400;
+    color: rgba(116, 121, 140, 1);
+}
+.calories section p {
+    color: #282D30;
+    font-size: 20px;
+    font-weight: 700;
+}
