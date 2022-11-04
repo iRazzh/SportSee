@@ -1,0 +1,11 @@
+.home section{
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    margin-top: 5rem
+}
+.home section a{
+    width: 49%;
+    color: black;
+    text-decoration: none
+}
