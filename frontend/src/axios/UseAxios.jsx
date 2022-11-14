@@ -1,6 +1,13 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
+
+/**
+ * 
+ * @param {*} endpoints 
+ * @returns 
+ */
+
 export default function useAxios(endpoints) {
 	const [data, setData] = useState(null)
 	const [error, setError] = useState(null)

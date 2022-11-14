@@ -1,8 +1,13 @@
 import '../../css/stats/ActiviteQuotidienne.css';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts'
 
-export default function ActiviteQuotidienne(props) {
+/**
+ * Allows you to build everything that concerns the daily activity of the subject
+ * @param {*} Props : Will pass in props all the values necessary for the daily activity of the subject
+ * @returns 'ActiviteQuotidienne' Component
+ */
 
+export default function ActiviteQuotidienne(props) {
     return (
       <>
         <article className="activites">
@@ -12,7 +17,7 @@ export default function ActiviteQuotidienne(props) {
                 <p>Calories brûlées (kCal)</p>
             </div>
             <section>
-            <BarChart width={500} height={300} data={props.data} barGap={5} barCategoryGap={25} strokeDasharray="1 4" >
+            <BarChart data={props.data} width={500} height={300} barGap={5} barCategoryGap={25} strokeDasharray="1 4" >
               <CartesianGrid vertical={false} />
               <YAxis dataKey="calories" type="number" tickCount={3} tickLine={false} axisLine={false} orientation="right" tick={{fontSize: 12}} stroke="#74798C" />
               <XAxis tickLine={false} axisLine={false} tick={{fontSize: 12}} stroke="#74798C" />

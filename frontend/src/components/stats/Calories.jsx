@@ -5,6 +5,12 @@ import glucides from '../../assets/glucides.png'
 import lipides from '../../assets/lipides.png'
 
 
+/**
+ * Allows you to build everything that concerns the calories of the subject
+ * @param {*} Props : Will pass in props all the values necessary for the calories of the subject
+ * @returns 'Calories' Component
+ */
+
 export default function Calories(props) {
     return (
       <>
