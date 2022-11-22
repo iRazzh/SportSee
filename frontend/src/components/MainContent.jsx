@@ -23,7 +23,7 @@ export default function MainContent() {
 
   const APIAxios = UseAxios(endpoints)
   const APIData = APIAxios.data
-
+  console.log(APIData)
   /**
    * sessions = Will recover everything related to the daily activity of the person
    * APIData = Allows you to retrieve datas from the Axios
@@ -57,13 +57,11 @@ export default function MainContent() {
   }))
 
   /**
-   * dataScore = Will allow to get the main data in the right category to get the score
-   * score = Will allow to recover the score
+   * scoreUser = Will allow to recover the score
    * APIData = Allows you to retrieve datas from the Axios
    */
 
-  const dataScore = APIData?.USER_MAIN_DATA?.data;
-  const score = APIData?.USER_MAIN_DATA?.data?.score;
+  const scoreUser = APIData?.USER_MAIN_DATA?.data?.score;
 
   return (
     <main>
@@ -83,8 +81,7 @@ export default function MainContent() {
         <StatsGraph 
           dataAverage={averageSessions} 
           dataPerf={perf}
-          dataScore={dataScore}
-          score={score}
+          score={scoreUser}
         />
       </section>
     </main>

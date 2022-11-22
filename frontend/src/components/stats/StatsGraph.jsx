@@ -1,6 +1,5 @@
 import '../../css/stats/StatsGraph.css';
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis } from 'recharts';
-import { PieChart, Pie, Cell } from 'recharts';
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, RadialBarChart, RadialBar, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 import { LineChart, Line, XAxis, Tooltip } from 'recharts';
 
 /**
@@ -9,7 +8,14 @@ import { LineChart, Line, XAxis, Tooltip } from 'recharts';
  * @returns 'StatsGraph' Component
  */
 
+
 export default function StatsGraph(props) {
+
+    const pieDataCircle = [
+        { name: "finished", value: props.score, fill: `red` },
+        { name: "not-finished", value: 1 - props.score, fill: "transparent" },
+    ];
+
     return (
       <>
         <article className="stats-graph">
@@ -30,9 +36,9 @@ export default function StatsGraph(props) {
             </section>
             <section className="score">
                 <p className="score-p">Score</p>
-                <PieChart width={400} height={400}>
-                    <Pie data={props.dataScore} dataKey="score" startAngle={0} endAngle={90 + (props.score * 360)} innerRadius="60%" outerRadius="70%" fill="#8884d8" paddingAngle={5} >
-                        <Cell fill="red" />                    
+                <PieChart width={500} height={500}>
+                    <Pie data={pieDataCircle} dataKey="value" startAngle={90} endAngle={450} innerRadius="70%" outerRadius="80%" >
+                        {pieDataCircle.map((item, index) => (<Cell key={`cell-${index}`} fill={item.fill} cornerRadius="50%" />))}
                     </Pie>
                 </PieChart>
                 <div className="percentage-section">
