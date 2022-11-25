@@ -17,19 +17,19 @@ export default function Calories(props) {
         <article className="calories">
             <section>
                 <img src={calories} alt="Picto représentant les calories" />
-                <p>{props.calorieCount} <span>Calories</span></p>
+                <p>{props.calorieCount}kCal <span>Calories</span></p>
             </section>
             <section>
                 <img src={protein} alt="Picto représentant les protéines" />
-                <p>{props.proteinCount} <span>Proteines</span></p>
+                <p>{props.proteinCount}g <span>Proteines</span></p>
             </section>
             <section>
                 <img src={glucides} alt="Picto représentant les glucides" />
-                <p>{props.glucidesCount} <span>Glucides</span></p>
+                <p>{props.glucidesCount}g <span>Glucides</span></p>
             </section>
             <section>
                 <img src={lipides} alt="Picto représentant les lipides" />
-                <p>{props.lipidesCount} <span>Lipides</span></p>
+                <p>{props.lipidesCount}g <span>Lipides</span></p>
             </section>
         </article>
       </>

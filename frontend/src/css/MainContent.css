@@ -12,8 +12,28 @@ h1.hello span{
     font-size: 18px;
 }
 .stats {
-    margin-top: 5rem;
+    margin-top: 1rem;
     display: grid;
     grid-template-columns: 1fr 1fr 300px;
     grid-template-rows: 370px 270px;
+}
+@media screen and (max-width:1200px) {
+    .stats{
+        grid-template-columns: 1fr 1fr 190px;
+    }
+}
+.recharts-layer.recharts-line path{
+    stroke-width: 3px;
+}
+.recharts-default-tooltip{
+    background-color: red!important;
+    color: white;
+}
+.recharts-tooltip-item{
+    color: white!important
+}
+.recharts-curve.recharts-tooltip-cursor{
+    background: #000000;
+    mix-blend-mode: normal;
+    opacity: 0.1;
 }

@@ -1,5 +1,5 @@
 import '../../css/stats/StatsGraph.css';
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, RadialBarChart, RadialBar, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PieChart, Pie, Cell } from 'recharts';
 import { LineChart, Line, XAxis, Tooltip } from 'recharts';
 
 /**
@@ -7,7 +7,6 @@ import { LineChart, Line, XAxis, Tooltip } from 'recharts';
  * @param {*} Props : Will pass in props all the values necessary for the different graphic statistics of the subject 
  * @returns 'StatsGraph' Component
  */
-
 
 export default function StatsGraph(props) {
 

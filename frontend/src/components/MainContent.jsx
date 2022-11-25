@@ -15,15 +15,14 @@ export default function MainContent() {
 
   // Thoses endpoints were given in the topic
   let endpoints = [
-    `http://localhost:3001/user/${id}`,
-    `http://localhost:3001/user/${id}/average-sessions`,
-    `http://localhost:3001/user/${id}/performance`,
-    `http://localhost:3001/user/${id}/activity`,
+    `http://localhost:3000/user/${id}`,
+    `http://localhost:3000/user/${id}/average-sessions`,
+    `http://localhost:3000/user/${id}/performance`,
+    `http://localhost:3000/user/${id}/activity`,
   ]
 
   const APIAxios = UseAxios(endpoints)
   const APIData = APIAxios.data
-  console.log(APIData)
   /**
    * sessions = Will recover everything related to the daily activity of the person
    * APIData = Allows you to retrieve datas from the Axios
