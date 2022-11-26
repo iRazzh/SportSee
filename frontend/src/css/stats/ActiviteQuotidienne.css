@@ -39,6 +39,12 @@
     background: #282D30;
 }
 .activites section{
-    width: 100%;
-    height: 100%;
+    margin: 3rem auto 0;
+}
+.activites .recharts-cartesian-axis-tick-value tspan{
+    fill: #9B9EAC;
+    font-size: 15px;
+}
+.recharts-cartesian-grid-horizontal line{
+    stroke: #9B9EAC!important;
 }

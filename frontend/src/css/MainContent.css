@@ -15,7 +15,7 @@ h1.hello span{
     margin-top: 1rem;
     display: grid;
     grid-template-columns: 1fr 1fr 300px;
-    grid-template-rows: 370px 270px;
+    grid-template-rows: 390px 270px;
 }
 @media screen and (max-width:1200px) {
     .stats{
@@ -36,4 +36,7 @@ h1.hello span{
     background: #000000;
     mix-blend-mode: normal;
     opacity: 0.1;
+}
+.recharts-tooltip-label{
+    display: none;
 }

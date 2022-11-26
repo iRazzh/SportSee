@@ -40,8 +40,8 @@
 }
 .score-p {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 10px;
+    left: 10px;
     font-weight: 500;
     font-size: 18px;
     color: #20253A;

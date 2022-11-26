@@ -18,7 +18,7 @@ export default function ActiviteQuotidienne(props) {
             </div>
             <section>
             <BarChart data={props.data} width={500} height={300} barGap={5} barCategoryGap={25} strokeDasharray="1 4" >
-              <CartesianGrid vertical={false} />
+            <CartesianGrid strokeDasharray="3 3" />
               <YAxis dataKey="calories" type="number" tickCount={3} tickLine={false} axisLine={false} orientation="right" tick={{fontSize: 12}} stroke="#74798C" />
               <XAxis tickLine={false} axisLine={false} tick={{fontSize: 12}} stroke="#74798C" />
               <Tooltip wrapperStyle={{ top: -50, left: 10 }} />
