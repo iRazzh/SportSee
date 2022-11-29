@@ -4,6 +4,7 @@ import protein from '../../assets/protein.png'
 import glucides from '../../assets/glucides.png'
 import lipides from '../../assets/lipides.png'
 
+import PropTypes from 'prop-types';
 
 /**
  * Allows you to build everything that concerns the calories of the subject
@@ -35,3 +36,9 @@ export default function Calories(props) {
       </>
     );
 }
+Calories.propTypes = {
+    calorieCount: PropTypes.number,
+    proteinCount: PropTypes.number,
+    glucidesCount: PropTypes.number,
+    lipidesCount: PropTypes.number
+};

@@ -1,6 +1,8 @@
 import '../../css/stats/ActiviteQuotidienne.css';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts'
 
+import PropTypes from 'prop-types';
+
 /**
  * Allows you to build everything that concerns the daily activity of the subject
  * @param {*} Props : Will pass in props all the values necessary for the daily activity of the subject
@@ -30,3 +32,6 @@ export default function ActiviteQuotidienne(props) {
       </>
     );
 }
+ActiviteQuotidienne.propTypes = {
+  data: PropTypes.array,
+};

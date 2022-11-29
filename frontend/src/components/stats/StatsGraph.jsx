@@ -1,6 +1,7 @@
 import '../../css/stats/StatsGraph.css';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PieChart, Pie, Cell } from 'recharts';
 import { LineChart, Line, XAxis, Tooltip } from 'recharts';
+import PropTypes from 'prop-types';
 
 /**
  * Allows you to build everything that concerns the different graphic statistics of the subject
@@ -49,3 +50,8 @@ export default function StatsGraph(props) {
       </>
     );
 }
+StatsGraph.propTypes = {
+    dataAverage: PropTypes.array,
+    dataPerf: PropTypes.array,
+    score: PropTypes.number
+};
