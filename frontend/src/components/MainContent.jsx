@@ -6,12 +6,19 @@ import { useParams } from "react-router-dom"
 
 import UseAxios from "../axios/UseAxios"
 
+import mocked_data from "../axios/MockedData"
+import formatMocked from "../axios/FormattedMockedData"
+import formatAPI from "../axios/FormattedDataAPI"
+
 export default function MainContent() {
 
   // Get ID "/id" of URL (12 or 18)
   // parseInt will analyze a string and return an integer of the specified base
   const params = useParams();
   const id = parseInt(params.id)
+
+  // switch to false for use api data, or true to use mocked data
+	const mockedData = true
 
   // Thoses endpoints were given in the topic
   let endpoints = [
@@ -21,67 +28,44 @@ export default function MainContent() {
     `http://localhost:3000/user/${id}/activity`,
   ]
 
-  const APIAxios = UseAxios(endpoints)
-  const APIData = APIAxios.data
-  /**
-   * sessions = Will recover everything related to the daily activity of the person
-   * APIData = Allows you to retrieve datas from the Axios
-   */
-  const sessions = APIData?.USER_ACTIVITY?.data?.sessions?.map(session => ({
-    day: session.day.toString().slice(-1),
-    kilogram: session.kilogram,
-    calories: session.calories,
-  }))
+  // the api response with api data only if "mockedData" is false
+  const APIAxios = !mockedData && UseAxios(endpoints)
 
-  /**
-   * formatted_day = Will allow to structure a date format to be used after
-   * averageSessions = Will allow to recover all the data about the average session
-   * APIData = Allows you to retrieve datas from the Axios
-   */
-  const formatted_day =  { 1: 'L', 2: 'M', 3: 'M', 4: 'J', 5: 'V', 6: 'S', 7: 'D' } 
-  const averageSessions = APIData?.USER_AVERAGE_SESSIONS?.data?.sessions?.map(session => ({
-    day: formatted_day[session.day],
-    sessionLength: session.sessionLength
-  }))
+  const api_data = mockedData ? null : APIAxios.data
 
-  /**
-   * formatted_stats = Will allow to structure several datas format to be used after
-   * perf = Will allow to recover all the performances of the user
-   * APIData = Allows you to retrieve datas from the Axios
-   */
-  const formatted_stats = { 1: 'Intensité', 2: 'Vitesse', 3: 'Force', 4: 'Endurance', 5: 'Energie', 6: 'Cardio' }
-  const perf = APIData?.USER_PERFORMANCE?.data?.data?.map(data => ({
-    value: data.value,
-    kind: formatted_stats[data.kind],
-  }))
+  // clean the data, mocked or fetched
+	const formatted_data = mocked_data 
+  ? new formatMocked(mocked_data, id)
+  : new formatAPI(api_data)
 
-  /**
-   * scoreUser = Will allow to recover the score
-   * APIData = Allows you to retrieve datas from the Axios
-   */
+  // enpoints, mocked or fetched
+  const user_main_data = formatted_data.main_data
+  const user_average_sessions = formatted_data.averageSessions
+  const user_performance = formatted_data.perf
+  const user_activity = formatted_data.sessions
 
-  const scoreUser = APIData?.USER_MAIN_DATA?.data?.score;
+  mockedData ? console.log("données mockées") : console.log("données de l'api")
 
-  return (
+  return(
     <main>
-      <h1 className="hello">Bonjour <span>{APIData?.USER_MAIN_DATA?.data?.userInfos?.firstName}</span></h1>
+      <h1 className="hello">Bonjour <span>{user_main_data.user_infos.firstName}</span></h1>
       <p className="congrats">Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
       
       <section className="stats">
         <ActiviteQuotidienne 
-          data={sessions} 
+          data={user_activity} 
         />
         <Calories 
-          calorieCount={APIData?.USER_MAIN_DATA?.data?.keyData?.calorieCount} 
-          proteinCount={APIData?.USER_MAIN_DATA?.data?.keyData?.proteinCount} 
-          glucidesCount={APIData?.USER_MAIN_DATA?.data?.keyData?.carbohydrateCount} 
-          lipidesCount={APIData?.USER_MAIN_DATA?.data?.keyData?.lipidCount} 
+          calorieCount={user_main_data?.key_data?.calorieCount} 
+          proteinCount={user_main_data?.key_data?.proteinCount} 
+          glucidesCount={user_main_data?.key_data?.carbohydrateCount} 
+          lipidesCount={user_main_data?.key_data?.lipidCount} 
         />
         <StatsGraph 
-          dataAverage={averageSessions} 
-          dataPerf={perf}
-          score={scoreUser}
-        />
+          dataAverage={user_average_sessions} 
+          dataPerf={user_performance}
+          score={user_main_data?.today_score}
+          />
       </section>
     </main>
 

@@ -4,6 +4,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
+    max-height: 80%;
 }
 .calories section{
     background: #FBFBFB;
@@ -11,7 +12,7 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding: 20px;
+    padding: 15px;
     width: 100%;
     justify-content: space-evenly;
 }

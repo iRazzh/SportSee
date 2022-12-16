@@ -20,6 +20,7 @@
     display: flex;
     width: 40%;
     justify-content: space-between;
+    margin-bottom: .5rem;
 }
 .activites .legende-activites p{
     display: flex;
@@ -38,13 +39,18 @@
 .activites .legende-activites p:first-of-type::before{
     background: #282D30;
 }
-.activites section{
-    margin: 3rem auto 0;
-}
 .activites .recharts-cartesian-axis-tick-value tspan{
     fill: #9B9EAC;
     font-size: 15px;
 }
 .recharts-cartesian-grid-horizontal line{
     stroke: #9B9EAC!important;
+}
+.valueAfter{
+    background-color:red;
+    color: white;
+    padding: 10px;
+}
+.valueAfter p{
+    margin-bottom: 1rem;
 }

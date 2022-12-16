@@ -1,5 +1,5 @@
 main{
-    padding: 20px 60px 20px 200px;
+    padding: 20px 60px 20px 130px;
 }
 h1.hello{
     font-size: 48px;
@@ -8,14 +8,14 @@ h1.hello span{
     color: red;
 }
 .congrats{
-    margin-top:2rem;
+    margin-top:1rem;
     font-size: 18px;
 }
 .stats {
     margin-top: 1rem;
     display: grid;
     grid-template-columns: 1fr 1fr 300px;
-    grid-template-rows: 390px 270px;
+    grid-template-rows: 300px 230px;
 }
 @media screen and (max-width:1200px) {
     .stats{
@@ -25,9 +25,12 @@ h1.hello span{
 .recharts-layer.recharts-line path{
     stroke-width: 3px;
 }
-.recharts-default-tooltip{
-    background-color: red!important;
-    color: white;
+.duree .custom-tooltip{
+    background-color:white;
+    padding: 10px;
+}
+.duree .recharts-tooltip-item-value{
+    color: black;
 }
 .recharts-tooltip-item{
     color: white!important
@@ -39,4 +42,12 @@ h1.hello span{
 }
 .recharts-tooltip-label{
     display: none;
+}
+
+/* TEST */
+.recharts-tooltip-item-name, .recharts-tooltip-item-separator{
+    display: none;
+}
+span.recharts-tooltip-item-value:first-of-type:after{
+    content: "kCal"
 }

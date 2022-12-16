@@ -5,9 +5,9 @@
     flex-direction: column;
     align-items: center;
     background-color: black;
-    height:130vh;
+    height:100vh;
     justify-content:space-between;
-    width: 140px;
+    width: 100px;
     z-index: 0;
 }
 .sidebar .sidebar-pictos {

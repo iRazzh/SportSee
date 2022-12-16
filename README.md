@@ -60,3 +60,5 @@ npm start
 # N.B
 
 The SportSee API contains data for only 2 users (12 & 18). You will be able to choose on a small homepage either one user or another.
+
+A boolean named 'mockedData' is defined in "MainContent.jsx" at line 21. If set to "true", the data will be mocked data, if set to "false", the data will be api data

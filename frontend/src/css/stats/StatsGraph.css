@@ -22,7 +22,7 @@
     top: 20px;
     left: 20px;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 13px;
     z-index: 1;
     color: #FFFFFF;
     width: 60%;
@@ -48,17 +48,14 @@
     z-index: 1;
 }
 /* RECHARTS */
-.recharts-wrapper, .recharts-wrapper svg{
-    width: 100%!important;
-    height: 100%!important;
-}
+
 .recharts-wrapper svg tspan{
     fill: #FFFF;
-    font-size: 25px;
+    font-size: 12px;
 }
 .recharts-wrapper svg path, .recharts-wrapper svg line {
     stroke: #FFFF;
-    stroke-opacity:1;
+    stroke-opacity:.5;
 }
 .recharts-radar-polygon{
     stroke: inherit!important;
