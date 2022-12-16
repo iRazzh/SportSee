@@ -18,7 +18,7 @@ export default function MainContent() {
   const id = parseInt(params.id)
 
   // switch to false for use api data, or true to use mocked data
-	const mockedData = true
+	const mockedData = false
 
   // Thoses endpoints were given in the topic
   let endpoints = [
@@ -39,32 +39,32 @@ export default function MainContent() {
   : new formatAPI(api_data)
 
   // enpoints, mocked or fetched
-  const user_main_data = formatted_data.main_data
-  const user_average_sessions = formatted_data.averageSessions
-  const user_performance = formatted_data.perf
-  const user_activity = formatted_data.sessions
+  const USER_MAIN_DATA = formatted_data.main_data
+  const USER_AVERAGE_SESSIONS = formatted_data.averageSessions
+  const USER_PERF = formatted_data.perf
+  const USER_SESSION = formatted_data.sessions
 
-  mockedData ? console.log("données mockées") : console.log("données de l'api")
+  mockedData ? console.log("MOCK") : console.log("API")
 
   return(
     <main>
-      <h1 className="hello">Bonjour <span>{user_main_data.user_infos.firstName}</span></h1>
+      <h1 className="hello">Bonjour <span>{USER_MAIN_DATA.user_infos.firstName}</span></h1>
       <p className="congrats">Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
       
       <section className="stats">
         <ActiviteQuotidienne 
-          data={user_activity} 
+          data={USER_SESSION} 
         />
         <Calories 
-          calorieCount={user_main_data?.key_data?.calorieCount} 
-          proteinCount={user_main_data?.key_data?.proteinCount} 
-          glucidesCount={user_main_data?.key_data?.carbohydrateCount} 
-          lipidesCount={user_main_data?.key_data?.lipidCount} 
+          calorieCount={USER_MAIN_DATA?.key_data?.calorieCount} 
+          proteinCount={USER_MAIN_DATA?.key_data?.proteinCount} 
+          glucidesCount={USER_MAIN_DATA?.key_data?.carbohydrateCount} 
+          lipidesCount={USER_MAIN_DATA?.key_data?.lipidCount} 
         />
         <StatsGraph 
-          dataAverage={user_average_sessions} 
-          dataPerf={user_performance}
-          score={user_main_data?.today_score}
+          dataAverage={USER_AVERAGE_SESSIONS} 
+          dataPerf={USER_PERF}
+          score={USER_MAIN_DATA?.today_score}
           />
       </section>
     </main>

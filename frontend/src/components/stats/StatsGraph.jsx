@@ -44,20 +44,10 @@ export default function StatsGraph(props) {
             </section>
             <section className="intensite">
 			<ResponsiveContainer width="100%" height="100%">
-				<RadarChart
-					cx="50%"
-					cy="50%"
-					innerRadius="10%"
-					outerRadius={window.innerWidth > 1340 ? "70%" : "55%"}
-					data={props.dataPerf}>
+				<RadarChart cx="50%" cy="50%" innerRadius="10%" outerRadius={"70%"} data={props.dataPerf}>
 					<PolarGrid radialLines={false} />
-					<PolarAngleAxis
-						dataKey="kind"
-						tickLine={false}
-						tick={{ fontSize: 12, fontWeight: 500 }}
-						stroke={"#ffffff"}
-					/>
-					<Radar name={"User"} dataKey="value" fill="#FF0101" fillOpacity={0.7} />
+					<PolarAngleAxis dataKey="kind" tickLine={false} stroke={"#ffffff"} />
+					<Radar dataKey="value" fill="#FF0101" fillOpacity={0.8} />
 				</RadarChart>
 			</ResponsiveContainer>
             </section>
