@@ -54,7 +54,7 @@ export default function StatsGraph(props) {
             <section className="score">
                 <p className="score-p">Score</p>
                 <ResponsiveContainer width="100%" height="100%">
-                    <PieChart width={500} height={500}>
+                    <PieChart>
                         <Pie data={pieDataCircle} dataKey="value" startAngle={90} endAngle={450} innerRadius="70%" outerRadius="80%" >
                             {pieDataCircle.map((item, index) => (<Cell key={`cell-${index}`} fill={item.fill} cornerRadius="50%" />))}
                         </Pie>
@@ -63,6 +63,7 @@ export default function StatsGraph(props) {
                 <div className="percentage-section">
                     <p className="percentage">{props.score * 100}%</p>
                     <p className="objectif">de votre objectif</p>
+                    <div className="circle"></div>
                 </div>
             </section>
         </article>

@@ -78,13 +78,24 @@
     font-size: 20px;
 }
 @media screen and (max-width:1200px) {
-    .percentage-section{
+    /* .percentage-section{
         top: 55%;
-    }
+    } */
     .percentage-section .percentage{
         font-size: 20px;
     }
     .percentage-section .objectif{
         font-size: 18px;
     }
+}
+.circle{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    background-color:white;
+    border-radius: 50%;
+    z-index: -2;
 }

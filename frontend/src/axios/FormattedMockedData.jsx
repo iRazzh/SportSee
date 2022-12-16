@@ -1,4 +1,4 @@
-export default class Format_mocked_data {
+export default class FormattedMockedData {
 	constructor(data, id) {
 
 		this.source = "mocked_data"
@@ -22,12 +22,12 @@ export default class Format_mocked_data {
 			kilogram: session.kilogram,
 			calories: session.calories,
 		}))
-
+		const formatted_day =  { 1: 'L', 2: 'M', 3: 'Me', 4: 'J', 5: 'V', 6: 'S', 7: 'D' } 
 		this.averageSessions = filtered_mocked_data.USER_AVERAGE_SESSIONS.sessions.map(session => ({
 			day: formatted_day[session.day],
 			sessionLength: session.sessionLength
 		}))
-
+		const formatted_kind = { 1: 'Cardio', 2: 'Energie', 3: 'Endurance', 4: 'Force', 5: 'Vitesse', 6: 'Intensité' }
 		this.perf =  filtered_mocked_data.USER_PERFORMANCE.data.map(data => ({
 			value: data.value,
 			kind: formatted_kind[data.kind],
@@ -36,5 +36,3 @@ export default class Format_mocked_data {
 	}
 }
 
-const formatted_kind = { 1: 'Cardio', 2: 'Energie', 3: 'Endurance', 4: 'Force', 5: 'Vitesse', 6: 'Intensité' }
-const formatted_day =  { 1: 'L', 2: 'M', 3: 'Me', 4: 'J', 5: 'V', 6: 'S', 7: 'D' } 

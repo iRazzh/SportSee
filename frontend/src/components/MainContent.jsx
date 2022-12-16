@@ -18,7 +18,7 @@ export default function MainContent() {
   const id = parseInt(params.id)
 
   // switch to false for use api data, or true to use mocked data
-	const mockedData = false
+	const mockedData = true
 
   // Thoses endpoints were given in the topic
   let endpoints = [
@@ -31,18 +31,18 @@ export default function MainContent() {
   // the api response with api data only if "mockedData" is false
   const APIAxios = !mockedData && UseAxios(endpoints)
 
-  const api_data = mockedData ? null : APIAxios.data
+  const APIData = mockedData ? null : APIAxios.data
 
   // clean the data, mocked or fetched
-	const formatted_data = mocked_data 
+	const formattedData = mocked_data 
   ? new formatMocked(mocked_data, id)
-  : new formatAPI(api_data)
+  : new formatAPI(APIData)
 
   // enpoints, mocked or fetched
-  const USER_MAIN_DATA = formatted_data.main_data
-  const USER_AVERAGE_SESSIONS = formatted_data.averageSessions
-  const USER_PERF = formatted_data.perf
-  const USER_SESSION = formatted_data.sessions
+  const USER_MAIN_DATA = formattedData.main_data
+  const USER_AVERAGE_SESSIONS = formattedData.averageSessions
+  const USER_PERF = formattedData.perf
+  const USER_SESSION = formattedData.sessions
 
   mockedData ? console.log("MOCK") : console.log("API")
 
